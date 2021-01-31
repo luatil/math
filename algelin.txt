@@ -1,295 +1,201 @@
-- Aula 1
-    - Def. Espaco Vetorial
-- Aula 2
-    - Exs de Esp Vet:
-        1. Rn
-        2. Pn(R)
-        3. Tom ze
-        4. Nulo
-        5. Funcoes
-        6. C(R, R)
-        7. Mnxn
-    - Def. Transf Lineares
-    - Exs de Transf Lineares:
-        1. T: R2->R3
-        2. T: R3->R
-        3. D: C1(R, R)->C0(R, R) // derivada
-- Aula 3
-    - Prop. Se T: V->W eh linear -> T(0) = 0
-    - Prop. Se T: V->W eh linear bijetora -> T(-1): W->V eh linear
-    - Def. T: V->W eh linear bijetora -> T eh um isomorfismo
-    - Def. V e W sao isomorfos <-> Existe isomofismo T: V->W
-    - Def. Nucleo de T. N(T) = {v in V | T(v) = 0}. O nucleo eh um subconjunto de V. 
-    - Def. Imagem de T. Im(T) = {w in W | w = T(v), v in V}. A imagem eh um subconjunto de W. 
-    - Prop. T: V->W eh linear. T eh injetora <-> N(T) = {0}
-    - Prop. T eh sobrejetora <-> Im(T) = W
-- Aula 4
-    - Ex. Aplic. p. Calc: constante de integracao na integral indefinida
-    - Def. Subespacos Vetorias
-        - S eh um subconjunto de V
-        - 0 in S
-        - v, w in S -> v + w in S
-        - lambda in R, v in S -> lambda * v in S
-    - Obs: "0 in S" serve para garantir que S != NULL 
-- Aula 5 
-    - Def. comb linear
-    - Prop. [v1, v2, .., vk] in V. [a1, a2, .. ak] in R. S = {a1v1 + a2v2 + ... + akvk} subconj(V) -> S eh subespaco_vetorial(V)
-    - Notacao. S = [v1, ..., vk], Span{v1, .., vk}, <v1, ..., vk>
-    - Notacao. S eh subespaco de V. S = [v1, ..., vk] -> v1, .., vk sao geradores de S
-    - Obs. Relacao com sistemas lineares
-- Aula 6 
-    - Prop. T: V->W eh linear. V = [v1, ..., vk]. -> Im(T) = [T(v1), ..., T(vk)]
-    - Obs. u in V -> u = a1*v1 + ... + ak*vk. -> T(u) = a1*T(v1) + ... + ak*T(vk)
-    - Prop. Inteseccao de Subespacos: S1 eh subespaco de V. S2 eh subespaco de V. -> intersec(S1, S2) eh subespaco de V.
-        ---- Subespaco(x, y) x eh subespaco de y. Intersec(x, y) <funcao binaria> retorna a interseccao de x e y
-        ---- forall S1. forall S2. forall V. (Subespaco(S1, V) and Subespaco(S2, V) -> Subespaco(Intersec(S1, S2), V))
-- Aula 7
-    Def. S1 + S2 = {v1 + v2 | v1 in S1, v2 in S2}
-    Prop. S1 eh subespaco de V. S2 eh subespaco de V. S1 + S2 eh subespaco de V. 
-    Cuidado. S1, S2 subespacos !-> S1 uniao S2 eh um subespaco
-    Def. S = S1+S2 subespaco de V. v in S. Uma decomposicao de v eh dada por v = v1 + v2. v1 in S1, v2 in S2. 
-    Prop. S=S1+S2. Subespaco(S1, V). Subespaco(S2, V). Subespaco(S, V). v in S. v1 in S1. v2 in S2. 
-        v = v1 + v2 eh unica <-> Intersec(S1, S2) = {0}
-    Def. S1 + S2 eh uma soma direta <-> Intersec(S1, S2) = {0}
-- Aula 8
-
-    Def. LD/Li
-    Prop. {v1, ..., vk} in V. LD({v1, ..., vk}) <-> exists i in {1, .. k}. vi in [v1, .., vi-1, vi+1, ..., vk]
-
-- Aula 9
-
-    Def. Subespaco(S, V). B = (v1, ..., vd). S1 = [v1, ..., vd]. LI({v1, ..., vd}). -> EhBase(B, S).
-        - EhBase(x, y) x eh base de y
-
-    Def. Subespaco(S, V). B = (v1, ..., vd). S1 = Span({v1, .., vd}). LI({v1, ..., vd}). -> B eh uma base de S.
-        ----- Nota-se aqui o use de () para indicar conjunto ordenado
-
-    Def. Dimensao finita:
-        - AdmiteBase(x) x admite uma base
-        - TemDimensaoFinita(x) x tem uma dimensao finita
-        - Subespaco(S, V) and (AdmiteBase(S) or S = {0}) -> TemDimensaoFinita(S)
-
-    Def. Dimensao de um espaco vetorial:
-        - dim(S). dim: V -> N. EspacoVetorial(V). TemDimensaoFinita(V). N eh o conjunto dos naturais.
-        - dim(S) = # de vetores numa base de S. 
-
-    Prop. EspacoVetorial(S). dim(S) = l. {v1, ..., vk} in S
-        - LI({v1, .., vk}) -> k <= l
-
-    Teorema. Subespaco(S, V). TemDimensaoFinita(S). B = (v1, ..., vd). EhBase(B, S). ->
-        1. LI({v1, ..., vk}). max(k) = d
-        2. S = Span({v1, ..., vk}). min(k) = d
-        3. EhBase(x, S). len(x) = d. 
-
-- Aula 10 
-
-    Exemp. Base canonica de Rn:
-        - E = (e1, .., en). ei = (01, 02, .., 1i, 0n)
-        - EhBase(E, Rn)
-        - dim(Rn) = n
-
-    Exemp. V = P2(R). S = {p(x) in P2(R) | p(1) = 0}
-        - S = Span({(1-x^2), (x-x^2)})
-        - dim(S) = 2
-
-    Exemp. V = P3(R). S = {p in P3(R) | deriv(p(1)) = 0, p(-1) = 0}
-       - dim(S) = 2
-
-
-- Aula 11
-
-    Disc. Rel entre bases e transf Lineares
-
-    Prop. phi: V->W. EhIsomorfismoLinear(phi, V, W)
-        - EhIsomorfismoLinear(x, y, z) x eh um isomorfismo linear de y para z
-        - E = (e1, ..., en). EhBase(E, V)
-        - F = (phi(e1), ..., phi(en)) -> EhBase(F, W)
-
-    Corolario: EhIsomorfo(V, W) <-> dim(V) = dim(W)
-        - EhIsomorfo(x, y) x eh isomorfo a y
-
-
-- Aula 12
-
-    Teorema. do Completamento de Bases:
-        Hip:
-            - EspacoVetorial(V).
-            - dim(V) = n
-            - TemDimensaoFinita(V).
-            - LI({v1, ..., vk}). 
-            - k <= n 
-        Conclusao:
-            - B = (v1, ..., vk, vk+1, ..., vn). EhBase(B, V).
-
-    Corolario. dim(V) = d. 
-        - LI({v1, ..., vd}) -> EhBase((v1, ..., vd), V)
-
-    
-    Corolario. Subespaco(S1, V). Subespaco(S2, V). TemDimensaoFinita(S1). TemDimensaoFinita(S2)
-        - EhSubconjunto(x, y) x eh subconjunto de y
-        - EhSubconjunto(S1, S2) and (dim(S1) = dim(S2)) -> S1 = S2
-
-
-- Aula 13
-
-    Resolucao exercicio 13, L2
-
-- Aula 14
-
-    Teorema. Teorema do Nucleo e da Imagem. 
-        Hip:
-            - EspacoVetorial(V). 
-            - TemDimensaoFinita(V). 
-            - T: V->W. EhTransformacaoLinear(T, V, W).
-        Conclusao:
-            dim(V) = dim(N(T)) + dim(Im(T))
-
-    Corolario. dim(V) = dim(W) = n. EhTransformacaoLinear(T, V, W) -> (EhInjetora(T) <-> EhSobrejetora(T) <-> EhBijetora(T))
-
-    Teorema. Dimensao de S1+S2
-        Hip:
-            - EhEspacoVetorial(V)
-            - EhSubespaco(S1, V). EhSubespaco(S2, V).
-            - TemDimensaoFinita(S1). TemDimensaoFinita(S2). 
-        Conclusao: 
-            - dim(S1+S2) = dim(S1) + dim(S2) - dim(intersec(S1, S2))
-
-- Aula 15 - Espacos Vetorias com Produto Interno
-
-    Def. Produto Interno
-        - EspacoVetorial(V). <,>: VxV->R. Bilinear(<,>). Simetrico(<,>). PositivoDefinido(<,>). -> ProdutoInterno(<,>, V).
-        - ProdutoInterno(x, y) x eh um produto interno de y
-
-    Bilinear(f)
-        - f(u+w, v)  = f(u, v) + f(w, v)
-        - f(u, v+w) = f(u, v) + f(u, w)
-        - f(au, v) = a f(u, v) = f(u, av)
-
-    Simetrico(f) 
-        - f(u, v) = f(v, u)
-
-    PositivoDefinido(f)
-        - f(u, u) >= 0
-        - f(u, u) = 0 <-> u = 0
-
-    Def. Compatibilidade de Produtos Internos
-        // This is getting messy, I should create a new category of space with internal product
-        - EspacoVetorial(V). ProdutoInterno(<,>v, V)
-        - EspacoVetorial(W). ProdutoInterno(<,>w, W)
-        - TranformacaoLinear(T, V, W). 
-        // this is not what I wanted it to be
-        - CompativelComProdutosInternos(x, y, z) x eh compativel com os produtos internos de y e z
-        - <T(v1), T(v2)>w = <v1, v2>v -> CompativelComProdutosInternos(T, V, W)
-
-    // Prefiro essa notacao ao inves de usar a nomenclatura espaco com produto interno
-    InnerProductSpace(x, y) x is a vector space with y as a inner product
-
-    Def. Isometria
-        - InnerProductSpace(V, <,>v)
-        - InnerProductSpace(W, <,>w)
-        - Isomorfismo(T, V, W). 
-        - CompativelComProdutosInternos(T, V, W) 
-        -> Isometria(V, W)
-
-    Def. Norma de um vetor 
-        - InnerProductSpace(V, <,>). v in V. 
-        - ||v|| = sqrt(<v, v>)
-
-    Def. Angulo entre vetores
-        - InnerProductSpace(V, <,>). v in V. w in V. v != 0. w != 0.
-        - angulo(v, w) = arccos(<v, w>/ (||v||* ||w||) )
-
-    Def. Ortogonalidade entre vetores
-        - InnerProductSpace(V, <,>). v in V. w in V. v != 0. w != 0.
-        - ortogonal(v, w) <-> <v, w> = 0
-
-    Teorema. Cauchy-Schwartz
-        Hip. 
-            - InnerProductSpace(V, <,>).
-            - v in V. w in V.
-        Conclusao.
-            - | <v, w> | <= ||v|| * ||w||
-
-    Def. Base Ortonormal
-        - InnerProductSpace(V, <,>).
-        - E = (e1, ... en)
-        - Base(E, V)
-        - <ei, ej> = 1 if i = j
-        - <ei, ej> = 0 if i != j
-        -> BaseOrtonormal(E, V)
-        // ||ei|| = 1, forall i
-        // ortogonal(ei, ej) forall i != j
-
-    Def. Metodo de Gram-Schmidt
-        - InnerProductSpace(V, <,>).
-        - B = (v1, ..., vn).
-        - Base(B, V).
-        Obj. E = (e1, ..., en). BaseOrtonormal(E, V). Span({v1, ..., vn}) = Span({e1, ..., en}). Orientaca de B e E coincidem.
-        
-
-- Aula 16 
-
-    - Exemp. Aplicacoes de Gram-Schmidt
-
-    Def. complemento_ortogonal(S). f: {} -> {} | Subespaco ortogonal
-        - InnerProductSpace(V, <,>).
-        - Subspaco(S, V)
-        - complemento_ortogonal(S) = {v in V | <v, w> = 0 forall w in S}
-
-    ?S^-|-
-
-    Prop. InnerProductSpace(V, <,>). Subespaco(S, V). -> Subespaco(complemento_ortogonal(S), V)
-
-    Prop. InnerProductSpace(V, <,>). Subespaco(S, V). -> V = soma_direta(S, complemento_ortogonal(S))
-
-- Aula 17
-
-    Def. Projecao Ortogonal. projecao_ortogonal(x, y) 
-        - InnerProductSpace(V, <,>)
-        - projecao_ortogonal(v, w) = (<v, w> / || w ||^2) * w
-
-- Aula 18 
-
-    - Matriz da transformacao linear
-    - 
-
-    
-- Aula 19
-    
-    - Formula de soma de seno e cosseno
-    - Matriz de mudanca de base
-    - def. matrix invertivel
-
-- Aula 20 
-
-    - Relacao com matrizes
-    
-- Aula 21
-
-    - Determinante
-    - multilinear
-    - alternada
-    - unica funcao multlinear alternada
-
-- Aula 22
-    
-    - Propriedades do determinante
-
-- Aula 23
-
-    - subespaco invariante por T
-    - autovetores e autovalores
-    - diagonalizavel
-    - polinomio caracteristico
-
-- Aula 24
-
-    - como encontrar uma base diagonalizavel
-
-- Aula 25
-
-    - crazy autoadjunto
-
-- Aula 26 
-
-    - Teorema espectral e quadricas 
+- Def. R eh o conjunto dos numeros reais
+
+- Prop. Se T: V->W eh linear -> T(0) = 0
+- Prop. Se T: V->W eh linear bijetora -> T^(-1): W->V eh linear
+- Def. T: V->W eh linear bijetora -> T eh um isomorfismo
+- Def. V e W sao isomorfos <-> Existe isomofismo T: V->W
+- Def. Nucleo de T. N(T) = {v in V | T(v) = 0}. O nucleo eh um subconjunto de V. 
+- Def. Imagem de T. Im(T) = {w in W | w = T(v), v in V}. A imagem eh um subconjunto de W. 
+- Prop. T: V->W eh linear. T eh injetora <-> N(T) = {0}
+- Prop. T eh sobrejetora <-> Im(T) = W
+- Def. Subespacos Vetorias
+	- S eh um subconjunto de V
+	- 0 in S
+	- v, w in S -> v + w in S
+	- lambda in R, v in S -> lambda * v in S
+- Obs: "0 in S" serve para garantir que S != conjunto vazio
+
+- Prop. [v1, v2, .., vk] in V. [a1, a2, .. ak] in R. S = {a1v1 + a2v2 + ... + akvk}. S eh subconj(V). -> S eh subespaco_vetorial(V)
+- Notacao. S = [v1, ..., vk], Span{v1, .., vk}, <v1, ..., vk>
+- Notacao. S eh subespaco de V. S = [v1, ..., vk] -> v1, .., vk sao geradores de S
+- Obs. Relacao com sistemas lineares
+- Prop. T: V->W eh linear. V = [v1, ..., vk]. -> Im(T) = [T(v1), ..., T(vk)]
+- Obs. u in V -> u = a1*v1 + ... + ak*vk. -> T(u) = a1*T(v1) + ... + ak*T(vk)
+- Prop. Inteseccao de Subespacos: S1 eh subespaco de V. S2 eh subespaco de V. -> intersec(S1, S2) eh subespaco de V.
+	---- Subespaco(x, y) x eh subespaco de y. Intersec(x, y) <funcao binaria> retorna a interseccao de x e y
+	---- forall S1. forall S2. forall V. (Subespaco(S1, V) and Subespaco(S2, V) -> Subespaco(Intersec(S1, S2), V))
+
+Def. S1 + S2 = {v1 + v2 | v1 in S1, v2 in S2}
+Prop. S1 eh subespaco de V. S2 eh subespaco de V. S1 + S2 eh subespaco de V. 
+Cuidado. S1, S2 subespacos !-> S1 uniao S2 eh um subespaco
+Def. S = S1+S2 subespaco de V. v in S. Uma decomposicao de v eh dada por v = v1 + v2. v1 in S1, v2 in S2. 
+Prop. S=S1+S2. Subespaco(S1, V). Subespaco(S2, V). Subespaco(S, V). v in S. v1 in S1. v2 in S2. 
+	v = v1 + v2 eh unica <-> Intersec(S1, S2) = {0}
+Def. S1 + S2 eh uma soma direta <-> Intersec(S1, S2) = {0}
+
+Notacao. LD := Linearmente Dependente.
+Prop. {v1, ..., vk} in V. LD({v1, ..., vk}) <-> exists i in {1, .. k}. vi in [v1, .., vi-1, vi+1, ..., vk]
+
+Def. Subespaco(S, V). B = (v1, ..., vd). S1 = [v1, ..., vd]. LI({v1, ..., vd}). -> EhBase(B, S).
+	- EhBase(x, y) x eh base de y
+
+Def. Subespaco(S, V). B = (v1, ..., vd). S1 = Span({v1, .., vd}). LI({v1, ..., vd}). -> B eh uma base de S.
+	----- Nota-se aqui o use de () para indicar conjunto ordenado
+
+Def. Dimensao finita:
+	- AdmiteBase(x) x admite uma base
+	- TemDimensaoFinita(x) x tem uma dimensao finita
+	- Subespaco(S, V) and (AdmiteBase(S) or S = {0}) -> TemDimensaoFinita(S)
+
+Def. Dimensao de um espaco vetorial:
+	- dim(S). dim: V -> N. EspacoVetorial(V). TemDimensaoFinita(V). N eh o conjunto dos naturais.
+	- dim(S) = # de vetores numa base de S. 
+
+Prop. EspacoVetorial(S). dim(S) = l. {v1, ..., vk} in S
+	- LI({v1, .., vk}) -> k <= l
+
+Teorema. Subespaco(S, V). TemDimensaoFinita(S). B = (v1, ..., vd). EhBase(B, S). ->
+	1. LI({v1, ..., vk}). max(k) = d
+	2. S = Span({v1, ..., vk}). min(k) = d
+	3. EhBase(x, S). len(x) = d. 
+
+Exemp. Base canonica de Rn:
+	- E = (e1, .., en). ei = (01, 02, .., 1i, 0n)
+	- EhBase(E, Rn)
+	- dim(Rn) = n
+
+Exemp. V = P2(R). S = {p(x) in P2(R) | p(1) = 0}
+	- S = Span({(1-x^2), (x-x^2)})
+	- dim(S) = 2
+
+Exemp. V = P3(R). S = {p in P3(R) | deriv(p(1)) = 0, p(-1) = 0}
+   - dim(S) = 2
+
+Disc. Rel entre bases e transf Lineares
+
+Prop. phi: V->W. EhIsomorfismoLinear(phi, V, W)
+	- EhIsomorfismoLinear(x, y, z) x eh um isomorfismo linear de y para z
+	- E = (e1, ..., en). EhBase(E, V)
+	- F = (phi(e1), ..., phi(en)) -> EhBase(F, W)
+
+Corolario: EhIsomorfo(V, W) <-> dim(V) = dim(W)
+	- EhIsomorfo(x, y) x eh isomorfo a y
+
+Teorema. do Completamento de Bases:
+	Hip:
+		- EspacoVetorial(V).
+		- dim(V) = n
+		- TemDimensaoFinita(V).
+		- LI({v1, ..., vk}). 
+		- k <= n 
+	Conclusao:
+		- B = (v1, ..., vk, vk+1, ..., vn). EhBase(B, V).
+
+Corolario. dim(V) = d. 
+	- LI({v1, ..., vd}) -> EhBase((v1, ..., vd), V)
+
+
+Corolario. Subespaco(S1, V). Subespaco(S2, V). TemDimensaoFinita(S1). TemDimensaoFinita(S2)
+	- EhSubconjunto(x, y) x eh subconjunto de y
+	- EhSubconjunto(S1, S2) and (dim(S1) = dim(S2)) -> S1 = S2
+
+Teorema. Teorema do Nucleo e da Imagem. 
+	Hip:
+		- EspacoVetorial(V). 
+		- TemDimensaoFinita(V). 
+		- T: V->W. EhTransformacaoLinear(T, V, W).
+	Conclusao:
+		dim(V) = dim(N(T)) + dim(Im(T))
+
+Corolario. dim(V) = dim(W) = n. EhTransformacaoLinear(T, V, W) -> (EhInjetora(T) <-> EhSobrejetora(T) <-> EhBijetora(T))
+
+Teorema. Dimensao de S1+S2
+	Hip:
+		- EhEspacoVetorial(V)
+		- EhSubespaco(S1, V). EhSubespaco(S2, V).
+		- TemDimensaoFinita(S1). TemDimensaoFinita(S2). 
+	Conclusao: 
+		- dim(S1+S2) = dim(S1) + dim(S2) - dim(intersec(S1, S2))
+
+Def. Produto Interno
+	- EspacoVetorial(V). <,>: VxV->R. Bilinear(<,>). Simetrico(<,>). PositivoDefinido(<,>). -> ProdutoInterno(<,>, V).
+	- ProdutoInterno(x, y) x eh um produto interno de y
+
+Bilinear(f)
+	- f(u+w, v)  = f(u, v) + f(w, v)
+	- f(u, v+w) = f(u, v) + f(u, w)
+	- f(au, v) = a f(u, v) = f(u, av)
+
+Simetrico(f) 
+	- f(u, v) = f(v, u)
+
+PositivoDefinido(f)
+	- f(u, u) >= 0
+	- f(u, u) = 0 <-> u = 0
+
+Def. Compatibilidade de Produtos Internos
+	// This is getting messy, I should create a new category of space with internal product
+	- EspacoVetorial(V). ProdutoInterno(<,>v, V)
+	- EspacoVetorial(W). ProdutoInterno(<,>w, W)
+	- TranformacaoLinear(T, V, W). 
+	// this is not what I wanted it to be
+	- CompativelComProdutosInternos(x, y, z) x eh compativel com os produtos internos de y e z
+	- <T(v1), T(v2)>w = <v1, v2>v -> CompativelComProdutosInternos(T, V, W)
+
+// Prefiro essa notacao ao inves de usar a nomenclatura espaco com produto interno
+InnerProductSpace(x, y) x is a vector space with y as a inner product
+
+Def. Isometria
+	- InnerProductSpace(V, <,>v)
+	- InnerProductSpace(W, <,>w)
+	- Isomorfismo(T, V, W). 
+	- CompativelComProdutosInternos(T, V, W) 
+	-> Isometria(V, W)
+
+Def. Norma de um vetor 
+	- InnerProductSpace(V, <,>). v in V. 
+	- ||v|| = sqrt(<v, v>)
+
+Def. Angulo entre vetores
+	- InnerProductSpace(V, <,>). v in V. w in V. v != 0. w != 0.
+	- angulo(v, w) = arccos(<v, w>/ (||v||* ||w||) )
+
+Def. Ortogonalidade entre vetores
+	- InnerProductSpace(V, <,>). v in V. w in V. v != 0. w != 0.
+	- ortogonal(v, w) <-> <v, w> = 0
+
+Teorema. Cauchy-Schwartz
+	Hip. 
+		- InnerProductSpace(V, <,>).
+		- v in V. w in V.
+	Conclusao.
+		- | <v, w> | <= ||v|| * ||w||
+
+Def. Base Ortonormal
+	- InnerProductSpace(V, <,>).
+	- E = (e1, ... en)
+	- Base(E, V)
+	- <ei, ej> = 1 if i = j
+	- <ei, ej> = 0 if i != j
+	-> BaseOrtonormal(E, V)
+	// ||ei|| = 1, forall i
+	// ortogonal(ei, ej) forall i != j
+
+Def. Metodo de Gram-Schmidt
+	- InnerProductSpace(V, <,>).
+	- B = (v1, ..., vn).
+	- Base(B, V).
+	Obj. E = (e1, ..., en). BaseOrtonormal(E, V). Span({v1, ..., vn}) = Span({e1, ..., en}). Orientaca de B e E coincidem.
+
+Def. complemento_ortogonal(S). f: {} -> {} | Subespaco ortogonal
+	- InnerProductSpace(V, <,>).
+	- Subspaco(S, V)
+	- complemento_ortogonal(S) = {v in V | <v, w> = 0 forall w in S}
+
+Prop. InnerProductSpace(V, <,>). Subespaco(S, V). -> Subespaco(complemento_ortogonal(S), V)
+
+Prop. InnerProductSpace(V, <,>). Subespaco(S, V). -> V = soma_direta(S, complemento_ortogonal(S))
+
+Def. Projecao Ortogonal. projecao_ortogonal(x, y) 
+	- InnerProductSpace(V, <,>)
+	- projecao_ortogonal(v, w) = (<v, w> / || w ||^2) * w
