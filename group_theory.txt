@@ -1,0 +1,36 @@
+Def. Group
+	A group is a set G with a binary function * : G x G -> G satisfying the following
+	axioms: (CIIA)
+
+	C: (Closure) For any element g and h in G, the result g * h is also in G
+
+	I: (Identity) There is an element e in G such that, for all g in G, e * g = g
+	and g * e = g
+
+	I: (Inverses) For each g in G, there is an element of G denoted g^-1 that 
+	satisfies g * g^-1 = e and g^-1 = e
+
+	A: (Associativity) FOr any elements g, h and j in G, we have (g * h) * j =
+	g * (h * j)
+
+Def. Dihedral Group | Dn
+	A dihedral group is the set of symmetries of a regular n-gon.
+
+	Ex: The set of symmetries of an equilateral triangle.
+
+Def. Symmetric Group | Sn
+	A symmetric group is the set of permutations of n distinct sequential 
+	integers. {1, 2, ... n} under the operation of composition.
+
+Def. Cyclic Group | Zn
+	A cyclic group has {0, 1, .. n-1}  has it's elements and addition mod n
+	as it's binary operation
+
+Def. Order of the element
+	The order of the element, k, is the smallest k such that g^k = e. 
+	If there is no such positive integer k then we say g has infinite order.
+
+	Ex: in D3 the group of symmetries of an equilateral triangle, a reflection
+	r has order 2, because r^2 = 3.
+
+	The group identity itself always has order 1, because e^1 = e.
