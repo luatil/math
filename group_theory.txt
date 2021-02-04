@@ -38,3 +38,15 @@ Def. Order of the element
 Def. Group Isomorphism
 	An isomorphism between two groups is a bijective map preserving the group
 	operations.
+
+	Ex: Consider the symmetries of the letter I and pair of integers mod 2. 
+	Also the mapping F(I) = (0, 0), F(H) = (1, 0), F(V) = (0, 1) and F(R) = (1, 1).
+	Where I means identity; H, horizontal reflection; V, vertical,; R, rotation.
+	Here the G1 = {I, H, V, R} and * means composition.
+	While G2 = {(0, 0), (0, 1), (1, 0), (1, 1)}, and * means addition mod 2.
+
+	For instance: I * H = H, and ((0, 0) + (1, 0)) % 2 = (1, 0).
+	And more interestingly: H * R = V, while ((1, 0) + (1, 1)) % 2 = (0, 1).
+
+
+
