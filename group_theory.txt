@@ -48,5 +48,6 @@ Def. Group Isomorphism
 	For instance: I * H = H, and ((0, 0) + (1, 0)) % 2 = (1, 0).
 	And more interestingly: H * R = V, while ((1, 0) + (1, 1)) % 2 = (0, 1).
 
+	The underlying structure of both groups in called the Klein group.
 
 
