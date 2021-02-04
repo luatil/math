@@ -34,3 +34,7 @@ Def. Order of the element
 	r has order 2, because r^2 = 3.
 
 	The group identity itself always has order 1, because e^1 = e.
+
+Def. Group Isomorphism
+	An isomorphism between two groups is a bijective map preserving the group
+	operations.
