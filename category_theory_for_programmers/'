@@ -1,0 +1,10 @@
+#include <stdio.h> 
+
+int main()
+{
+	int *a = 3111111;
+	char b;
+	b  = (char) a;
+	b = 0;
+	printf("%d", a);
+}
